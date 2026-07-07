@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0080ff;
+  --color-primary-dark: #0066cc;
+  --color-surface: #f9f9f9;
+  --color-surface-dim: #dadada;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f3f3;
+  --color-surface-container: #ebebeb;
+  --color-surface-container-high: #e5e5e5;
+  --color-surface-container-highest: #dfdfdf;
+  --color-on-surface: #1a1a1a;
+  --color-text-muted: #666666;
+  --color-border-light: #e5e5e5;
+  --font-sans: 'Inter', sans-serif;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, #0080ff 0%, #b3d9ff 50%, #ffffff 100%);
+}
+
+.pricing-gradient {
+  background: linear-gradient(180deg, #ffffff 0%, #e6f2ff 50%, #0080ff 100%);
+}
+
+.clip-path-notch {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px));
+}
+
+.rounded-4xl { border-radius: 2rem; }
+.rounded-5xl { border-radius: 2.5rem; }
+
+.feature-card {
+  background: #f4f4f5;
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  transition: transform 0.2s ease-in-out;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+}
