@@ -1,9 +1,7 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from "motion/react"
+import { motion, AnimatePresence, type Variants } from "motion/react"
 import {
   Check,
-  Menu,
-  X,
   Search,
   Zap,
   Layers,
@@ -62,93 +60,93 @@ const faqData: FAQItem[] = [
 // ==========================================
 // OPTIMIZED SMOOTH VARIANTS (GPU ACCELERATED)
 // ==========================================
-const staggerContainer = {
+const staggerContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15, delayChildren: 0.4 } }
 }
 
-const fadeBlur = {
+const fadeBlur: Variants = {
   hidden: { opacity: 0, scale: 0.95, y: 20 },
   visible: {
     opacity: 1, scale: 1, y: 0,
-    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] }
+    transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }
   }
 }
 
-const headingContainer = {
+const headingContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.2, delayChildren: 0.2 } }
 }
 
-const sectionContainer = {
+const sectionContainer: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 1.5 } }
 }
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
 }
 
-const awardContainer = {
+const awardContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } }
 }
 
-const awardItem = {
+const awardItem: Variants = {
   hidden: { opacity: 0, y: 40, scale: 0.95 },
   visible: {
     opacity: 1, y: 0, scale: 1,
-    transition: { type: "spring", stiffness: 60, damping: 20 }
+    transition: { type: "spring" as const, stiffness: 60, damping: 20 }
   }
 }
 
-const statsContainer = {
+const statsContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.2, delayChildren: 0.5 } }
 }
 
-const statItem = {
+const statItem: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" as const } }
 }
 
-const featureIntroContainer = {
+const featureIntroContainer: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.2, delayChildren: 0.1 } }
 }
 
-const wordReveal = {
+const wordReveal: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
 }
 
-const standardFade = {
+const standardFade: Variants = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] } }
 }
 
-const cardFade = {
+const cardFade: Variants = {
   hidden: { opacity: 0, y: 60 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1], delay: 0.2 } }
+  visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number], delay: 0.2 } }
 }
 
-const flipScale = {
+const flipScale: Variants = {
   hidden: { opacity: 0, rotateY: 90, scale: 0.8, transformPerspective: 1200 },
   visible: {
     opacity: 1, rotateY: 0, scale: 1, transformPerspective: 1200,
-    transition: { type: "spring", stiffness: 70, damping: 20 }
+    transition: { type: "spring" as const, stiffness: 70, damping: 20 }
   }
 }
 
-const tagStagger = {
+const tagStagger: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.05, delayChildren: 0.6 } }
 }
 
-const tagItem = {
+const tagItem: Variants = {
   hidden: { opacity: 0, scale: 0.8, y: 10 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 15 } }
+  visible: { opacity: 1, scale: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 15 } }
 }
 
 function App() {
