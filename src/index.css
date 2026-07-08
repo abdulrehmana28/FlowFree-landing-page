@@ -39,8 +39,13 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px));
 }
 
-.rounded-4xl { border-radius: 2rem; }
-.rounded-5xl { border-radius: 2.5rem; }
+.rounded-4xl {
+  border-radius: 2rem;
+}
+
+.rounded-5xl {
+  border-radius: 2.5rem;
+}
 
 .feature-card {
   background: #f4f4f5;
@@ -48,6 +53,17 @@ body {
   padding: 2.5rem;
   transition: transform 0.2s ease-in-out;
 }
+
 .feature-card:hover {
   transform: translateY(-5px);
+}
+
+/* Add this to index.css */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+  overscroll-behavior-x: none;
+  /* Stops the "bounce" effect on mobile when hitting edges */
 }
